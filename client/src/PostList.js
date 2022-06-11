@@ -3,16 +3,13 @@ import axios from 'axios';
 import CommentCreate from './CommentCreate';
 import CommentList from './CommentList';
 
-
-
 const PostList = () => {
-
     const [posts, setPosts] = useState({});
 
     const fetchPosts = async () => {
         const res = await axios.get('http://localhost:4002/posts');
         console.table(res.data)
-        setPosts(res.data);
+        setPosts(res.data); 
     };
 
     useEffect(() => {

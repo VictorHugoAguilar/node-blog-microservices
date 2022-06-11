@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const posts = {};
+const posts = {}; 
 
 const handleEvent =   (type, data) => {
     if (type === 'PostCreated') {

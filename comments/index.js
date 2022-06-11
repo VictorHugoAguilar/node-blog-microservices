@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
-const { restart } = require("nodemon");
 const axios = require('axios');
 
 const app = express();
@@ -16,8 +15,13 @@ app.get('/posts/:id/comments', (req, res) => {
 });
 
 app.post('/posts/:id/comments', async (req, res) => {
-    const commentId = randomBytes(4).toString('hex');
     const { content } = req.body;
+
+    if (!content || content === '') {
+        return res.send({});
+    }
+
+    const commentId = randomBytes(4).toString('hex');
     const comments = commentsByPostId[req.params.id] || [];
     comments.push({ id: commentId, content, status: 'pending' });
     commentsByPostId[req.params.id] = comments;

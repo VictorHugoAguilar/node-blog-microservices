@@ -5,16 +5,13 @@ const PostCreate = () => {
     const [title, setTitle] = useState('');
 
     const onSubmit = async (event) => {
-
-        console.log('onSubmit');
-
         event.preventDefault();
-
         await axios.post('http://localhost:4000/posts', {
             title
         });
 
         setTitle('');
+        window.location.reload(true);
     };
 
     return <div className="card">
