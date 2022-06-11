@@ -31,13 +31,12 @@ app.post('/posts/:id/comments', async (req, res) => {
         }
     });
 
-    console.log(commentsByPostId);
+    console.table(commentsByPostId);
     res.status(201).send(comments);
 });
 
 app.post('/events', (req, res) => {
     console.log('received event: ', req.body.type);
-
     res.send({});
 });
 

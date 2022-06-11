@@ -30,7 +30,7 @@ app.post('/posts', async (req, res) => {
         }
     });
 
-    console.log(`add new post -> ${title}`);
+    console.table(posts);
     res.status(201).send(posts[id]);
 });
 
