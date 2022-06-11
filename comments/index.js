@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
-const { restart } = require("nodemon");
 const axios = require('axios');
 
 const app = express();
