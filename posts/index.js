@@ -46,5 +46,6 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4000, () => {
+    console.log('Api Version: 0.0.1')
     console.log('Listening on 4000');
 });
